@@ -14,12 +14,27 @@ Simple discord server bot that handles managing book exchanges, shelf lists, etc
 !loan <book name, optionally with author> @user  ->  Update your loaned list to reflect that the given book was lent to the given user
 ```
 
-## Pushing code changes and redeploying to heroku:
+## Development
+1. Clone this git repo
+2. For local development, define an environment variable locally named BOOK_BOT_TOKEN with the token for the bot
+
+```
+SET BOOK_BOT_TOKEN=<add token here>
+```
+
+3. Make changes
+4. Push changes to github repo
+
+```
 $ git add .
 $ git commit -m "add change message here"
+$ git push -f origin master
+```
+
+5. Push to heroku and redeploy
+```
 $ heroku login
 Enter your Heroku credentials.
 ...
-$ git push -f origin master
-...
 $ git push heroku master
+```
