@@ -1,0 +1,25 @@
+# Book Eschange Bot
+
+Simple discord server bot that handles managing book exchanges, shelf lists, etc, between users. Runs on heroku.
+
+## Commands:
+
+```
+!bookbot ->  Show this message
+!newbook <book name, optionally with author>  ->  update your shelf list with the given book and post link
+!reading <book name, optionally with author>  ->  update your reading list with the given book and post link
+!justread <book name, optionally with author>  ->  update your read list with the given book and post link
+!viewshelf  ->  View all available books with owner and status (reading, lent, read)
+!viewshelf @user  ->  View the bookshelf of the given user
+!loan <book name, optionally with author> @user  ->  Update your loaned list to reflect that the given book was lent to the given user
+```
+
+## Pushing code changes and redeploying to heroku:
+$ git add .
+$ git commit -m "add change message here"
+$ heroku login
+Enter your Heroku credentials.
+...
+$ git push -f origin master
+...
+$ git push heroku master
