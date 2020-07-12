@@ -1,1 +1,1 @@
-web: SET PORT=3000 && node .
+web: PORT=3000 node .
