@@ -1,1 +1,8 @@
+# config files
 config.json
+
+# build artifacts
+/node_modules
+npm-debug.log
+.DS_Store
+/*.env
