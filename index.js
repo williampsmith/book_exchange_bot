@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
-const TOKEN = 'NzMxOTUzMTQ2MjU0ODUyMTA2.XwtrwQ.nUvPUFRFrE5SD-w4TQKZDBosrQo';
 
 const bot = new Discord.Client();
-bot.login(TOKEN);
+const { token } = require('./config.json');
+bot.login(token);
 
 bot.on('ready', () => {
     console.log('Book exchange bot is online!');
