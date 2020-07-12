@@ -1,11 +1,17 @@
 const Discord = require('discord.js');
+require('dotenv-flow').config();
+
+const config = {
+    token: process.env.BOOK_BOT_TOKEN,
+    owner: process.env.OWNER,
+    prefix: process.env.PREFIX
+};
 
 const bot = new Discord.Client();
-const TOKEN = process.env.TOKEN
-bot.login(TOKEN);
 
+bot.login(config.token);
 bot.on('ready', () => {
-    console.log('Book exchange bot is online!');
+    console.log(`Logged in as ${bot.user.tag}!`);
 });
 
 bot.on('message', msg => {

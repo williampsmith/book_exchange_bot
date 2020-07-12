@@ -16,14 +16,15 @@ Simple discord server bot that handles managing book exchanges, shelf lists, etc
 
 ## Development
 1. Clone this git repo
-2. For local development, define an environment variable locally named BOOK_BOT_TOKEN with the token for the bot
+2. Add your user ID to the `owner` array in `.env`
+3. For local development, define an environment variable locally named BOOK_BOT_TOKEN with the token for the bot
 
 ```
 SET BOOK_BOT_TOKEN=<add token here>
 ```
 
-3. Make changes
-4. Push changes to github repo
+4. Make changes
+5. Push changes to github repo
 
 ```
 $ git add .
@@ -31,7 +32,7 @@ $ git commit -m "add change message here"
 $ git push -f origin master
 ```
 
-5. Push to heroku and redeploy
+6. Push to heroku and redeploy
 ```
 $ heroku login
 Enter your Heroku credentials.
