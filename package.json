@@ -1,0 +1,17 @@
+{
+  "name": "book_exchange_bot",
+  "version": "1.0.0",
+  "description": "Bot to manage book exchanges within a discord server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "William Smith",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.2.0"
+  },
+  "engines": {
+    "node": "14.5.0"
+  }
+}
