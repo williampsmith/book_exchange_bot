@@ -4,11 +4,10 @@ require('dotenv-flow').config();
 const config = {
     token: process.env.BOOK_BOT_TOKEN,
     owner: process.env.OWNER,
-    prefix: process.env.PREFIX
 };
 
-const prefix = config.prefix;
-console.log(`PREFIX: ${prefix}`);
+const PREFIX = "!!";
+console.log(`PREFIX: ${PREFIX}`);
 
 const bot = new Discord.Client();
 
@@ -19,9 +18,9 @@ bot.on('ready', () => {
 
 bot.on('message', message => {
     // if (message.author.bot) return;
-    // if (message.content.indexOf(prefix) !== 0) return;
+    // if (message.content.indexOf(PREFIX) !== 0) return;
 
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    const args = message.content.slice(PREFIX.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
     console.log(`COMMAND: ${command}`); // TODO -- remove
 
