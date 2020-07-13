@@ -8,6 +8,7 @@ const config = {
 };
 
 const prefix = config.prefix;
+console.log(`PREFIX: ${prefix}`);
 
 const bot = new Discord.Client();
 
