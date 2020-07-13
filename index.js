@@ -39,8 +39,8 @@ function initdb() {
       response.json({ info: 'Node.js, Express, and Postgres API' })
     });
 
-    express_app.listen(config.db_port, () => {
-      console.log(`Express app running on port ${config.db_port}.`);
+    express_app.listen(port, () => {
+      console.log(`Express app running on port ${port}.`);
     });
 }
 
