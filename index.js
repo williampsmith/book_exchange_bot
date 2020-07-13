@@ -7,7 +7,8 @@ const config = {
     token: process.env.BOOK_BOT_TOKEN,
     owner: process.env.OWNER,
     db: process.env.DB,
-    db_user: process.env.DB_USER
+    db_user: process.env.DB_USER,
+    db_port: process.env.DB_PORT
 };
 
 initdb();
@@ -16,7 +17,6 @@ run();
 function initdb() {
     // init express
     const express_app = express();
-    const port = 3000; // TODO -----------------------
     express_app.use(bodyParser.json());
     express_app.use(
         bodyParser.urlencoded({
@@ -39,8 +39,8 @@ function initdb() {
       response.json({ info: 'Node.js, Express, and Postgres API' })
     });
 
-    express_app.listen(port, () => {
-      console.log(`Express app running on port ${port}.`);
+    express_app.listen(config.db_port, () => {
+      console.log(`Express app running on port ${config.db_port}.`);
     });
 }
 
