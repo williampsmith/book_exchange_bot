@@ -35,11 +35,11 @@ function initdb() {
     });
 
     // root endpoint
-    app.get('/', (request, response) => {
+    express_app.get('/', (request, response) => {
       response.json({ info: 'Node.js, Express, and Postgres API' })
     });
 
-    app.listen(port, () => {
+    express_app.listen(port, () => {
       console.log(`Express app running on port ${port}.`);
     });
 }
