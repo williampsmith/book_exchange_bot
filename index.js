@@ -14,7 +14,7 @@ const config = {
 initdb();
 run();
 
-function initdb() {
+function initdb(config) {
     // init express
     const express_app = express();
     express_app.use(bodyParser.json());
@@ -46,7 +46,7 @@ function initdb() {
 }
 
 
-function run() {
+function run(config) {
     const PREFIX = "!!";
     const bot = new Discord.Client();
     bot.login(config.token);
