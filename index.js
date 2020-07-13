@@ -171,7 +171,7 @@ function updateDB(pool, username, name, author, status, loaned_to, message) {
     }
     try {
         row_id = getIdIfRowExists(pool, name, author);
-    } catch (Exception ex) {
+    } catch (ex) {
         message.channel.send('Internal db error');
     }
     if (row_id.length === 0) {
