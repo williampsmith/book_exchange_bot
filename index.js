@@ -11,8 +11,8 @@ const config = {
     db_port: process.env.DB_PORT
 };
 
-initdb();
-run();
+initdb(config);
+run(config);
 
 function initdb(config) {
     // init express
