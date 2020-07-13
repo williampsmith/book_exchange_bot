@@ -7,6 +7,8 @@ const config = {
     prefix: process.env.PREFIX
 };
 
+const prefix = config.prefix;
+
 const bot = new Discord.Client();
 
 bot.login(config.token);
@@ -14,11 +16,17 @@ bot.on('ready', () => {
     console.log(`Logged in as ${bot.user.tag}!`);
 });
 
-bot.on('message', msg => {
-    content = msg.content.split(' ');
-    switch(content[0]) {
+bot.on('message', message => {
+    if (message.author.bot) return;
+    if (message.content.indexOf(prefix) !== 0) return;
+
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    const command = args.shift().toLowerCase();
+    if (!command) return;
+
+    switch(command) {
         case '!bookbot':
-            msg.reply(
+            message.reply(
                 "Hi, I'm the Book Exchange Bot :robot:! I can help you manage book exchanges. \n" +
                 "Here are some ways you can interact with me:\n" +
                 "!bookbot  :point_right:  Show this message\n" +
@@ -42,6 +50,7 @@ bot.on('message', msg => {
         case '!loan':
             break;
         default:
+            message.channel.send('This command is unknown. To see supported commands, enter !!bookbot.');
     }
 });
 
